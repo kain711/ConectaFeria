@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "dynamic-pivot-410001",
+  "private_key_id": "9b8cc4adecff55d73df0f9c6463122e24b69844b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC7W+hP+kI2lQmg\n/jKEGMiUGUvdpJanPgcjV2nLW7b5aIUZYVXxONzM+Vtt4bwsP/h5z3S/EyATnYp5\nFH7oTTjPIuSscwMDNiDBNr/qdVGNb2MKxt3oN+tWgcgi+jZm6umbQFSCLwdyzi0d\nW2MCY5A2VPNxz/V5lR0APKuUSJ4L0tsgLmKTEqnXe4uWQT5IQp25zm4yN2i4A8Ji\nbb7BThfu88UGUQ95hFPuRTRNMkwtPJRHz6DpNyxJrSmy6FIMks/gsougjY5rip/z\n2JBJLZ61K3Dc4R0IAhvGZeee19Q3WK0dZ1y9pBanhW4iiDbALQJ0u6QDl45zNOj3\nWPIltGJNAgMBAAECggEAUtWklU+Q3K7x7eLVFMAcVhYFC75L+S8cWsy38nffIs/K\nINl+9MJuJJWOjbtCxdGWmsxU0nGzOdjqMvQT08LoffPwZCoJR+8zdhktqowp/T0k\n7cvUqmmmu71vbb9wM/piRAiiFFiUk3aCTbtsv86jINJYO5Z08kcx5jvspAejEJhq\na7dyavUu3XlBdTIjhQXYnHu2/nqsevFoi0zPtQJxSdxUQPPc55dAQ7pCLX9Fix/M\nHHFJ5jCD/4lVHxJcoOPuZF4PLUIxo4LaHnD/YUoxsowTwB6ydkX00B59oRTTSJnk\ndXXt9JuUEYe7md8SipsGm1Nma2AMNIWuR1eX3wNehQKBgQD6nxvLJkhk5Erq1Fo1\nn3kd5FBbjnCCJM9GFPGlXgcRrDnLnD4W+kfs8R+rrGMq6tddXDZIW9XDRc0ure7t\nabTvz6qWGRe3TYd04iv/eOfuNGe12w8DtM7LZl56z2y/0tAvuwiRiKWzvurJH6y7\nfuMBdwlPf2jJqrUpfdtMsCDmqwKBgQC/YT2VGQSr7WJYIMmLX+3FZkEflOR/vJTN\neWkGHqu3dPC3V5uFH3hFWnohsP3Av7qB65PrBuDozFe+p1xnLbK4vQfkdy6+jJSi\nYIS2LxYn+9UEsyXp0YE7GWpWXR9Aso4nEe5hO5tGoo9y/6Kom+XdInf50zEYlsIB\nQKDqIUS65wKBgEvnrppLoPd1sT8IS74b66njAXeJX4f7MA/QvhNQtCFlISgKzT9W\nVDxuFyJ+lpZkBBBRolst/UMkO+2cXlXngxZytf654NXylEkRSzQX4V7i3lpU22pK\n86rk+U6GzjAW4Fjkc8boNQ+IjkGV51HuL0C9VcOPGiSiIDZN2QKUAZL7AoGAHZiV\nJHSdA1WPqt9PK82nAKsCkTa+a36naGtJMZgWqCVegIv80gZ+3ALU9lbftyovVp4u\n3t7Oc1H+k85f/NjVVbpt+QfxY6hr5/yTKXV4sLBCThrCVzl+CbyxdC+sgJ3cW/Bq\n9AB6z96d3oPoDLknQB5vfWQKqKnP0M/E0tBYR6sCgYBNVYojujrw+46k0NoO2+xn\nWQPtl6uQIv+mydfzNlIMThf8yPaVf26BI3pwYR8aG1YRt7xCO3cE5JNUFWXSZq+9\nElRr3HpW+vIieBepcSeAtke1kl+uzOQDxulEsVzRXqG7jAJL8CLlo8aj5O9VnENK\npC1I0D5LwmjnwzPtzyIj1w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "conectaferia@dynamic-pivot-410001.iam.gserviceaccount.com",
+  "client_id": "103110229677617527880",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/conectaferia%40dynamic-pivot-410001.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
