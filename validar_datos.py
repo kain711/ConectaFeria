@@ -1,6 +1,13 @@
 import math
 
 def verificar_cedula(cedula=""):
+    """
+    Funcion para validar la cedula de un usuario
+    parametros:
+        cedula
+    return:
+        True si la cedula es valida, False si la cedula es invalida
+    """
     
     if cedula=='no declara':
         return True
@@ -25,4 +32,4 @@ def verificar_cedula(cedula=""):
             else:
                 return False
 
-#print(verificar_cedula("0105686901"))
+
