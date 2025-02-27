@@ -1,7 +1,5 @@
 from tkinter import  Button, Canvas, Entry, Label, Radiobutton, StringVar, Tk, messagebox, ttk, NW,IntVar,Checkbutton
 from tkcalendar import DateEntry
-#import sqlite3
-
 from datetime import datetime
 from subir_datos_sheets import *
 from validar_datos import verificar_cedula
@@ -9,42 +7,36 @@ from PIL import Image,ImageTk
 from data_base import insertar_datos
 
 def iniciar_gui():
+    """
+    Funcion para generar la ventana principal de la aplicacion
+    parametros:
+        None    
+    return:
+        Genera la ventana principal de la aplicacion    
+    """
     
     
     root = Tk()
     root.title("Registro de usuarios")
     root.geometry("800x650")
-    #rgb_color=(188,188,188)
-    
     canvas=Canvas(root,width=800,height=650)
     image=ImageTk.PhotoImage(Image.open("./logo5.png"))
     canvas.create_image(0,0,anchor=NW,image=image)
     canvas.pack()
-    
     ###############Definir variables para almacenar los datos ingresados###############
-    
     #definir variable para la cedula
     cedula_var = StringVar()
     proceso_var=StringVar()
     proceso_var.set(" ")
     #definir fecha de nacimiento
     fecha_nac_var = StringVar()
-    
     #definir variables para los nombres y apellidos
     nombre_var = StringVar()
     apellido_var = StringVar()
-    
+
     #definir variables para los combobox acerca del canton
     canton_var = StringVar()
     canton_var.set("Seleccione un canton")
-    """
-    opciones_parroquia=["El Vecino","San Sebastian","Yanuncay","Totoracocha","San Blas",
-                        "Sucre","Monay","El Batan","Baños","Huaynacapac","Sagrario","Bellavista",
-                        "Valle","Hermano Miguel","Ramirez Davalos","Cañaribamba","Ricaurte",
-                        "San Joaquin","Sinincay","Turi","Nabon","Sidcay","Sayausi","jasdkas"]
-    """
-    
-    
     opciones_canton = ["Camilo Ponce Enríquez","Chordeleg","Cuenca","El Pan",
                        "Girón","Guachapala","Gualaceo","Nabón","Oña","Paute",
                        "Pucará","San Fernando","Santa Isabel","Sevilla de Oro","Sígsig"]
@@ -79,13 +71,7 @@ def iniciar_gui():
                        "Produccion Audiovisual","Seguridad y prevencion de riesgos laborales",
                        "Gestion del patrimonio historico cultural",
                        "Metalmecanica","Mantenimiento electrico y control industrial","Mecatronica",
-                       "Administracion de estructuras y plataformas tecnologicas","Entrenamiento deportivo","Desarrollo infanti integral"]
-    
-    
-    
-    ##########condicion en caso de que el estudiante no sepa la cedula
-    ######## se usara un checkbox para habilitar o deshabilitar la cedula
-   
+                       "Administracion de estructuras y plataformas tecnologicas","Entrenamiento deportivo","Desarrollo infanti integral"]   
     #Etiqueta y campo para los nombres del estudiante, crear widgets en el canvas
     Label(root, text="Nombre:",bg="white").place(x=50,y=50)
     Entry(root, textvariable=nombre_var).place(x=150,y=50)
@@ -93,19 +79,9 @@ def iniciar_gui():
     #Etiqueta y campo para los apellidos
     Label(root, text="Apellido:").place(x=50,y=100)
     Entry(root, textvariable=apellido_var).place(x=150,y=100)
-    
-    #Label(root,text="Recuerda su cedula?").place(x=350,y=133)
-    #Checkbutton(root,text="Si",variable=conoce_cedula_var,onvalue=1,offvalue=0).place(x=350,y=150)
-    #Checkbutton(root,text="No",variable=conoce_cedula_var,value=0).place(x=382,y=150)
-    
+    #etiqueta para la cedula
     Label(root, text="Cedula:").place(x=50,y=150)
     Entry(root,textvariable=cedula_var).place(x=150,y=150)
-    #cedula_entry=Entry(root,textvariable=cedula_var,state="enabled")
-    #cedula_entry.place(x=150,y=150)
-    #conoce_cedula_var.trace_add("write",actualizar_estado_cedula)
-        
-    #Entry(root, textvariable=cedula_var,state=estado).place(x=150,y=150)
-    #Etiqueta y campo para la cedula
    
     #Etiqueta y campo para el canton
     Label(root, text="Canton:").place(x=50, y=200)
@@ -177,6 +153,14 @@ def iniciar_gui():
     root.mainloop()
 
 def guardar_datos(nombre, apellido, cedula, canton, tipo_colegio, correo, telefono, jornada, modalidad, carrera1, carrera2, carrera3, fecha_nacimiento,proceso):
+    
+    """
+    Funcin para guardar los datos ingresados en la base de datos
+        parametros:
+            nombre, apellido, cedula, canton, tipo_colegio, correo, telefono, jornada, modalidad, carrera1, carrera2, carrera3, fecha_nacimiento,proceso
+        return:
+            Guarda los datos ingresados en la base de datos
+    """
     datos = [nombre, apellido, canton, tipo_colegio, jornada, modalidad, carrera1, carrera2, carrera3, fecha_nacimiento,proceso]
     carreras=[carrera1,carrera2,carrera3]
     
@@ -202,6 +186,13 @@ def guardar_datos(nombre, apellido, cedula, canton, tipo_colegio, correo, telefo
     
 
 def cancelar(nombre_var, cedula_var, apellido_var, canton_var, tipo_colegio_var, correo_var, telefono_var, jornada_var, modalidad_var, carrera1_var, carrera2_var, carrera3_var, fecha_nac_var):
+    """
+    Funcion para cancelar el registro de los usuarios
+        parametros:
+            nombre_var, cedula_var, apellido_var, canton_var, tipo_colegio_var, correo_var, telefono_var, jornada_var, modalidad_var, carrera1_var, carrera2_var, carrera3_var, fecha_nac_var       
+        return:
+            Cancela el registro de los usuarios
+    """
     nombre_var.set("")
     apellido_var.set("")
     cedula_var.set("")
@@ -218,6 +209,13 @@ def cancelar(nombre_var, cedula_var, apellido_var, canton_var, tipo_colegio_var,
     messagebox.showinfo("Registro de usuarios", "Registro cancelado")
 
 def limpiar(nombre_var, cedula_var, apellido_var, canton_var, tipo_colegio_var, correo_var, telefono_var, jornada_var, modalidad_var, carrera1_var, carrera2_var, carrera3_var, fecha_nac_var):
+    """
+    Funcion para limpiar los datos ingresados
+        parametros:
+            nombre_var, cedula_var, apellido_var, canton_var, tipo_colegio_var, correo_var, telefono_var, jornada_var, modalidad_var, carrera1_var, carrera2_var, carrera3_var, fecha_nac_var
+        return:
+            Limpia los datos ingresados
+    """
     nombre_var.set("")
     apellido_var.set("")
     cedula_var.set("")
@@ -230,6 +228,5 @@ def limpiar(nombre_var, cedula_var, apellido_var, canton_var, tipo_colegio_var, 
     carrera1_var.set("primera opcion")
     carrera2_var.set("segunda opcion")
     carrera3_var.set("tercera opcion")
-    #fecha_actual=datetime.now()
     fecha_nac_var.set('22/05/2007')
     

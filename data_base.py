@@ -6,18 +6,31 @@ def insertar_datos(cedula,nombre, apellido,
                    telefono, jornada, 
                    modalidad, carrera1, carrera2,
                    carrera3, fecha_nac, proceso):
+    """
+    Funcion para insertar datos en la base de datos
+    parametros:
+        cedula,nombre,apellido,modalidad,carrera1,carrera2,carrera3,fecha_nac,proceso
+    return:
+        Inserta los datos en la tabla datos_usuarios dentro de la base de datos Usuarios en PostgreSQL
+    """
     try:
+        """
+        Conexion a la base de datos, es necesrio instalar la extension SQLTools para poder 
+        acceder de forma facil a la base 
+        """
         conexion = psycopg2.connect(
             dbname="usuarios",
             user='soporte',
-            password='soporte',
-            host='localhost',
-            port="5432"
+            password='******',
+            host='************************************',
+            port="**********"
         )
         cursor = conexion.cursor()
         # Insertar datos
         cursor.execute("""
-            INSERT INTO datos_usuarios (cedula, nombre, apellido, canton, tipo_colegio, correo, telefono, jornada, modalidad, carrera1, carrera2, carrera3, fecha_nac, proceso)
+            INSERT INTO datos_usuarios (cedula, nombre, 
+            apellido, canton, tipo_colegio, correo, telefono, 
+            jornada, modalidad, carrera1, carrera2, carrera3, fecha_nac, proceso)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """, (cedula,nombre, apellido, canton, tipo_colegio,
               correo, telefono, jornada, modalidad, carrera1, 
@@ -30,19 +43,20 @@ def insertar_datos(cedula,nombre, apellido,
     except psycopg2.OperationalError as e:
         print(f"Ha ocurrido un error {e}")
         
-"""     
-insertar_datos("0102372166", "Andres","Mejia", 
-               "Cuenca","fiscal", "andres66689@gmail.com",
-               "0967751451", 'matutina','presencial', 
-               "carrera1", "carrera2", "carrera3", 
-               "30/01/1995", 'No')
-"""
+
 def crear_tabla_postgres():
+    """
+    Funcion para crear la tabla en la base de datos
+    parametros:
+        None    
+    return:
+        Crea la tabla datos_usuarios dentro de la base de datos Usuarios en PostgreSQL
+    """
     db_name='usuarios'
     db_user='soporte'
-    db_password='soporte'
-    db_host='localhost'
-    db_port='5432'
+    db_password='*********'
+    db_host='**********'
+    db_port='*********'
     
     create_table_query="""
         CREATE TABLE IF NOT EXISTS datos_usuarios(    
@@ -83,4 +97,3 @@ def crear_tabla_postgres():
             conexion.close()
             print("Conexion cerrada")
             
-crear_tabla_postgres()
