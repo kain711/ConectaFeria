@@ -10,7 +10,11 @@ def upload_to_sheets(nombre, apellido, cedula, canton, tipo_colegio, correo, tel
     SCOPES=['https://www.googleapis.com/auth/spreadsheets']#direccion por defecto de la api de las hojas de calculo
     try:
         KEY='./key.json'#llave de la api creada en los proyectos de google cloud
+<<<<<<< HEAD
         SPREADSHEET_ID='id de la hoja de calculo'#id de la hoja de calculo
+=======
+        SPREADSHEET_ID='**********************'#id de la hoja de calculo
+>>>>>>> 17f274b31b6616273b4403bb07c704e7e6ec3d9d
         creds=None#inicializa la variable
         creds=service_account.Credentials.from_service_account_file(KEY,scopes=SCOPES)#se indica que el 
         #servicio se va a ejecutar con las credenciales en la direccion de la api
@@ -29,3 +33,7 @@ def upload_to_sheets(nombre, apellido, cedula, canton, tipo_colegio, correo, tel
         print(f"Ha ocurrido un error al momento de ejecutar este programa {e}")
         
         
+<<<<<<< HEAD
+=======
+#upload_to_sheets('Samantha','Bueno',"0103229001",'Cuenca','Fiscal','samybueno499@gmail.com','4088091','matutina','presencial','desarrollo','big data','mecatronica','26/05/2007')
+>>>>>>> 17f274b31b6616273b4403bb07c704e7e6ec3d9d
