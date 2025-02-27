@@ -10,7 +10,7 @@ def upload_to_sheets(nombre, apellido, cedula, canton, tipo_colegio, correo, tel
     SCOPES=['https://www.googleapis.com/auth/spreadsheets']#direccion por defecto de la api de las hojas de calculo
     try:
         KEY='./key.json'#llave de la api creada en los proyectos de google cloud
-        SPREADSHEET_ID='1ahE3584e3k_smOLlNmX8sd2fwCeskWAAu0vcjqXjxy0'#id de la hoja de calculo
+        SPREADSHEET_ID='**********************'#id de la hoja de calculo
         creds=None#inicializa la variable
         creds=service_account.Credentials.from_service_account_file(KEY,scopes=SCOPES)#se indica que el 
         #servicio se va a ejecutar con las credenciales en la direccion de la api
